@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Character } from "./Character"
-
+import Button from 'react-bootstrap/Button';
+import { Container, Col, Row } from "react-bootstrap";
 
 export const List = () => {
     const [loading, setLoading] = useState(true)
@@ -17,7 +18,6 @@ export const List = () => {
             })
             .then(data => {
                 setCharacters(data.results)
-                console.log(data.results);
                 setLoading(false)
             })
             .catch(err => {
@@ -27,23 +27,28 @@ export const List = () => {
     }, [])
 
     return (
-        <div>
+        <Container fluid>
             <h1>Characters</h1>
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                characters.map((character) => (
-                    <Character
-                        key={character.id}
-                        name={character.name}
-                        origin={character.origin}
-                        image={character.image}
+                <Row>
+                    {characters.map(character => (
+                        <Col xs={12} md={8} lg={6} xl={4}
+                                key={character.id}>
 
-                    />
+                            <Character
+                                name={character.name}
+                                origin={character.origin}
+                                image={character.image}
 
-                ))
+                            />
+                        </Col>
+
+                    ))}
+                </Row>
             )}
 
-        </div>
+        </Container>
     )
 }

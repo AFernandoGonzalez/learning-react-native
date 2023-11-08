@@ -1,5 +1,4 @@
 
-
 export const Character = (character) => {
     return (
         <div>
