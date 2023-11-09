@@ -1,5 +1,7 @@
 import { Link } from "./Link"
 
+import { Link as RouterLink } from 'react-router-dom'
+
 export const ProjectList = ({ items }) => {
 
     return (
@@ -19,6 +21,9 @@ export const ProjectList = ({ items }) => {
                             url={item.url}
                             title={item.url}
                         />
+                        <RouterLink to={`/projects/${item.name}}`} className='App-link'>
+                            go to project
+                        </RouterLink>
                     </ul>
                 )
             })}

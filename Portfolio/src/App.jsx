@@ -5,8 +5,7 @@ import logo from './assets/react.svg'
 import { Profile } from './components/Profile.jsx'
 import { Routes, Route, } from 'react-router-dom'
 import { Project } from './components/Projects.jsx'
-
-// const USERNAME_API_ENDPOINT = 'https://api.github.com/users/AFernandoGonzalez'
+import { ProjectDetailsPages } from './components/ProjectDetailpages.jsx'
 
 function App() {
 
@@ -16,6 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Profile username="AFernandoGonzalez" />} />
         <Route path='/projects' element={<Project username="AFernandoGonzalez" />} />
+        <Route path='/projects/:name' element={<ProjectDetailsPages username="AFernandoGonzalez" />} />
       </Routes>
 
     </div>

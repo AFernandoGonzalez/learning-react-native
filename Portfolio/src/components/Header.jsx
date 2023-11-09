@@ -15,6 +15,7 @@ export const Header = ({ logo }) => {
                 <RouterLink to='/projects' className='App-link'>
                     Projects
                 </RouterLink>
+                
             </nav>
         </header>
     )
