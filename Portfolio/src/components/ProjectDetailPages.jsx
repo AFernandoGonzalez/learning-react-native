@@ -8,6 +8,8 @@ export const ProjectDetailsPages = ({ username }) => {
 
     const { name } = useParams()
 
+    console.log(name);
+
     useEffect(() => {
         fetch(`https://api.github.com/repos/${username}/${name}`)
             .then(res => {

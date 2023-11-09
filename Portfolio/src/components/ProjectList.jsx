@@ -1,8 +1,15 @@
 import { Link } from "./Link"
 
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
+import { useParams } from "react-router-dom"
 
 export const ProjectList = ({ items }) => {
+    const navigate = useNavigate();
+
+
+    const handleRedirect = (url) => {
+        navigate(url);
+    };
 
     return (
         <div>
@@ -17,13 +24,11 @@ export const ProjectList = ({ items }) => {
                             <span>Created At: </span>
                             {item.created_at}
                         </li>
-                        <Link
-                            url={item.url}
-                            title={item.url}
-                        />
-                        <RouterLink to={`/projects/${item.name}}`} className='App-link'>
-                            go to project
-                        </RouterLink>
+                        <button onClick={() => handleRedirect(`/projects/${item.name}`)}
+                            title={item.name}>
+                            Go to project
+                        </button>
+
                     </ul>
                 )
             })}

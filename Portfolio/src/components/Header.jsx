@@ -12,10 +12,11 @@ export const Header = ({ logo }) => {
                 <RouterLink to='/' className='App-link'>
                     About me
                 </RouterLink>
+                
                 <RouterLink to='/projects' className='App-link'>
                     Projects
                 </RouterLink>
-                
+               
             </nav>
         </header>
     )
