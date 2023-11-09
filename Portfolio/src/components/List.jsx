@@ -1,40 +1,48 @@
 import { Link } from "./Link"
 
-export const List = ({profile}) => {
 
-    return(
+export const List = ({ items }) => {
+
+    return (
         <div>
-            {profile.map((p, i) => {
+            {items.map((item) => {
                 return (
+                    <ul key={item.id}>
+                        <li >
+                            <span>{item.html_url}</span>
+                            <Link
+                                url={item.html_url}
+                                title={item.html_url}
+                            />
+                        </li>
+                        <li >
+                            <span>{item.repos_url}</span>
+                            <Link
+                                url={item.repos_url}
+                                title={item.repos_url}
+                            />
+                        </li>
+                        <li>
+                            <span>Name: </span>
+                            {item.name}
+                        </li>
+                        <li>
+                            <span>Company: </span>
+                            {item.company}
+                        </li>
+                        <li>
+                            <span>Location: </span>
+                            {item.location}
+                        </li>
+                        <li>
+                            <span>Email: </span>
+                            {item.email}
+                        </li>
+                        <li>
+                            <span>Bio: </span>
+                            {item.bio}
+                        </li>
 
-                    <ul key={i}>
-                        <img
-                            className='Profile-avatar'
-                            src={p.avatar_url}
-                            alt={p.name}
-                        />
-                        <li><span>avatar_url: </span>
-                            {p.avatar_url}</li>
-                        <li><span>html_url: </span>
-                            <Link
-                                url={profile.html_url}
-                                title={profile.html_url}
-                            />
-                        </li>
-                        <li><span>repos_url: </span>
-                            <Link
-                                url={profile.repos_url}
-                                title={profile.repos_url}
-                            />
-                        </li>
-                        <li><span>name: </span> {p.name}</li>
-                        <li><span>company: </span>
-                            {p.company}</li>
-                        <li><span>location: </span>
-                            {p.location}</li>
-                        <li><span>email: </span>
-                            {p.email}</li>
-                        <li><span>bio: </span> {p.bio}</li>
                     </ul>
                 )
             })}

@@ -17,7 +17,7 @@ export const Profile = ({ username }) => {
             })
             .then(data => {
                 setProfile([data])
-                console.log([data]);
+                console.log(data);
                 setLoading(false)
             })
             .catch(err => {
@@ -34,7 +34,7 @@ export const Profile = ({ username }) => {
             )
                 :
                 (
-                    <List profile={profile}/>
+                    <List items={profile}/>
                 )}
         </div>
     )
