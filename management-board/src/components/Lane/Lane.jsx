@@ -3,7 +3,6 @@ import './Lane.css'
 
 export const Lane = ({ title, loading, error, tasks }) => {
 
-    console.log("lane: ", tasks);
     return (
         <div className="lane-wrapper">
             <h1 className="">{title}</h1>

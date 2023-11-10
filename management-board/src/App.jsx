@@ -1,11 +1,14 @@
 import { Board } from "./components/pages/Board/Board"
-
+import { Header } from './components/Header/Header'
+import { Backlog } from "./Backlog/Backlog"
 
 function App() {
 
   return (
     <main>
-      <Board/>
+      <Header />
+      <Board />
+      <Backlog/>
     </main>
   )
 }
